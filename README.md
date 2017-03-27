@@ -17,3 +17,5 @@ Simply add a new file in the `lib` directory that exports a single function that
 This file will automatically be loaded on start and the bot instance passed in once conected.
 
 For available functions see: https://www.npmjs.com/package/slackbots#methods
+
+*Note:* You can disable files from being loaded by renaming them to start with a `.` E.g. `countdown.js` would become `.countdown.js`. It is recommended to do this with the example files once you are confident your bot it working.

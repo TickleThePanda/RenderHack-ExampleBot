@@ -2,8 +2,6 @@
 require('dotenv').config()
 const fs = require('fs');
 const SlackBot = require('slackbots');
-const PingPong = require('./lib/pingpong');
-const Countdown = require('./lib/countdown');
 
 const bot = new SlackBot({
   token: process.env.SLACK_TOKEN,
@@ -13,6 +11,8 @@ const bot = new SlackBot({
 bot.on('start', function() {
   // Load all functionality from `./lib`
   fs.readdirSync('./lib').forEach(function(file) {
-    require("./lib/" + file)(bot);
+    if (file[0] !== '.') {
+      require("./lib/" + file)(bot);
+    }
   });
 });
