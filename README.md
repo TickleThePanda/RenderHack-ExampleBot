@@ -7,7 +7,7 @@ An example Slackbot to use as a starter at Render hack
 1. Clone this repository
 2. `npm install`
 3. Copy `.env.example` to `.env`
-4. Get token details from @AverageMarcus or setup your own legacy token in a Slack team you control (see: https://api.slack.com/custom-integrations/legacy-tokens)
+4. Get token details from [Marcus](https://github.com/AverageMarcus) or setup your own legacy token in a Slack team you control (see: https://api.slack.com/custom-integrations/legacy-tokens)
 5. To run the bot: `npm start`
 
 ## Adding new functionality
