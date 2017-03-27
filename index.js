@@ -9,10 +9,13 @@ const bot = new SlackBot({
 });
 
 bot.on('start', function() {
-  // Load all functionality from `./lib`
-  fs.readdirSync('./lib').forEach(function(file) {
-    if (file[0] !== '.') {
-      require("./lib/" + file)(bot);
-    }
-  });
+  // We delay loading functions to prevent events from the past triggering upon startup
+  setTimeout(function() {
+    // Load all functionality from `./lib`
+    fs.readdirSync('./lib').forEach(function(file) {
+      if (file[0] !== '.') {
+        require("./lib/" + file)(bot);
+      }
+    });
+  }, 3000);
 });
