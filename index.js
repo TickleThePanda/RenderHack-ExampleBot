@@ -8,7 +8,16 @@ const bot = new SlackBot({
   name: process.env.SLACK_BOT_NAME
 });
 
+
 bot.on('start', function() {
+  console.log(Object.getOwnPropertyNames(bot));
+  Object.getOwnPropertyNames(bot).forEach(
+      property => console.log(property, bot[property])
+  );
+});
+
+bot.on('start', function() {
+
   // We delay loading functions to prevent events from the past triggering upon startup
   setTimeout(function() {
     // Load all functionality from `./lib`
